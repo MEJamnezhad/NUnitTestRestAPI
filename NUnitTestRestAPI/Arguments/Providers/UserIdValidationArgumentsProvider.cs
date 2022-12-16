@@ -14,9 +14,9 @@ namespace NUnitTestRestAPI.Arguments.Providers
             {
                 new ValidationArgumentHolder
                 {
-                    ErrorMessage="",
                     StatusCode = HttpStatusCode.NotFound,
-                    PathParameters = Parameter.CreateParameter("Id",-10,ParameterType.UrlSegment)
+                    PathParameters = Parameter.CreateParameter("Id",-10,ParameterType.UrlSegment),
+                    ErrorMessage = "User Invalid"
                 }
             };
 
@@ -24,24 +24,23 @@ namespace NUnitTestRestAPI.Arguments.Providers
            {
                 new ValidationArgumentHolder
                 {
-                    ErrorMessage="",
                     StatusCode = HttpStatusCode.NotFound,
-                    PathParameters = Parameter.CreateParameter("Id",int.MinValue,ParameterType.UrlSegment)
+                    PathParameters = Parameter.CreateParameter("Id",int.MinValue,ParameterType.UrlSegment),
+                    ErrorMessage = "User Invalid"
                 }
            };
 
-            for (int i = 1; i < 20; i++)
-            {
-                yield return new object[]     
-                {
-                    new ValidationArgumentHolder
-                    {
-                        ErrorMessage="",
-                        StatusCode = HttpStatusCode.OK,
-                        PathParameters = Parameter.CreateParameter("Id",i,ParameterType.UrlSegment)
-                    }
-                };
-            }
+            //for (int i = 1; i < 20; i++)
+            //{
+            //    yield return new object[]     
+            //    {
+            //        new ValidationArgumentHolder
+            //        {
+            //            StatusCode = HttpStatusCode.OK,
+            //            PathParameters = Parameter.CreateParameter("Id",i,ParameterType.UrlSegment)
+            //        }
+            //    };
+            //}
         }
     }
 }

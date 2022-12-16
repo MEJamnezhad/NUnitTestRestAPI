@@ -10,11 +10,10 @@ namespace NUnitTestRestAPI.Arguments.Holders
 {
     public class ValidationArgumentHolder
     {
-        public Parameter PathParameters { get; set; }
-
-        public string ErrorMessage { get; set; }
+        public Parameter? PathParameters { get; set; }
 
         public HttpStatusCode  StatusCode { get; set; }
 
+        public string ErrorMessage { get; set; }
     }
 }
